@@ -11,6 +11,9 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
+    "docker": "docker compose up --build -d",
+    "docker:interactive": "docker compose up --build",
+    "docker:remove": "docker compose down --rmi local",
     "seed:admin": "node src/scripts/seedAdmin.js",
     "format": "prettier  --write .",
     "format:check": "prettier --check ."

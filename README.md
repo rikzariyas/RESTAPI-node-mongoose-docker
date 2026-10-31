@@ -56,6 +56,12 @@ hashing and JWT-based authentication.
    For a regular start, use `npm start`. The API is available at
    `http://localhost:<PORT>` (default port `3000`).
 
+## Run with Docker
+
+Docker Compose runs the API container and connects it to MongoDB Atlas. See the
+[Docker Manual](./DOCKER.md) for Atlas configuration, image building, startup,
+admin seeding, health checks, and shutdown instructions.
+
 ## API
 
 Request and response bodies use JSON. Protected endpoints require:
@@ -194,10 +200,13 @@ src/
 
 ## Available scripts
 
-| Command                | Description                                                |
-| ---------------------- | ---------------------------------------------------------- |
-| `npm start`            | Start the API with Node.js.                                |
-| `npm run dev`          | Start the API with nodemon.                                |
-| `npm run seed:admin`   | Create the initial admin using the configured seed values. |
-| `npm run format`       | Format the project with Prettier.                          |
-| `npm run format:check` | Check formatting with Prettier.                            |
+| Command                      | Description                                                |
+| ---------------------------- | ---------------------------------------------------------- |
+| `npm start`                  | Start the API with Node.js.                                |
+| `npm run dev`                | Start the API with nodemon.                                |
+| `npm run docker`             | Build and start the Docker container in the background.    |
+| `npm run docker:interactive` | Build and run Docker Compose in the current terminal.      |
+| `npm run docker:remove`      | Stop and remove the container, network, and local image.   |
+| `npm run seed:admin`         | Create the initial admin using the configured seed values. |
+| `npm run format`             | Format the project with Prettier.                          |
+| `npm run format:check`       | Check formatting with Prettier.                            |
